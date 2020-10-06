@@ -20,9 +20,7 @@ public class HomeServlet extends HttpServlet
     {
         HttpSession session = request.getSession();
         
-        User user = (User) session.getAttribute("username");
-        
-        if(user == null)
+        if(session.getAttribute("username") == null)
         {
             getServletContext().getRequestDispatcher("/WEB-INF/login.jsp")
                     .forward(request, response);
@@ -36,6 +34,6 @@ public class HomeServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        
+        //nothing
     }
 }
